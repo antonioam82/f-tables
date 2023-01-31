@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import argparse
-#import sys ####################
+import sys ####################
 import yfinance as yf
 import pathlib
 from datetime import datetime
@@ -18,7 +18,8 @@ head = ""
 
 def main():
     
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog="f-tables",conflict_handler='resolve',description="Display finantial tables on your teminal.",
+                                     epilog= "REPO: https://github.com/antonioam82/f-tables")
     group = parser.add_mutually_exclusive_group()
     group.add_argument('-hd','--head',default=0,type=int,help='Number of head lines')
     group.add_argument('-tl','--tail',default=0,type=int,help='Number of end lines')
