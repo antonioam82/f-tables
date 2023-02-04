@@ -32,8 +32,6 @@ def main():
     parser.add_argument('--plot','-plt',default=None,action='store_true',help="Show graph")
     parser.add_argument('--save','-sv',type=str,default=None,help="Save table")
 
-    #TODO: DATAFRAMES VACIOS, INFORMACION EN LAS GRAFICAS
-
     args=parser.parse_args()
     show_table(args)
 
@@ -58,8 +56,8 @@ def head(args):
 def plot_graph(args,df):
     plt.title(f'{args.symbol}-{args.info}')
     plt.plot(df)
-    plt.xlabel("PRICE")
-    plt.ylabel("TIME")
+    plt.xlabel("DATE")
+    plt.ylabel("PRICE")
     plt.legend(loc='best',facecolor="w")
     plt.xticks(rotation=20)
     plt.grid()
